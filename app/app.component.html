@@ -54,8 +54,15 @@
 
 		<!-- Color Column -->
 		<ng-container cdkColumnDef="color">
-			<mat-header-cell *cdkHeaderCellDef mat-sort-header> Color </mat-header-cell>
-			<mat-cell *cdkCellDef="let row" [style.color]="row.color"> {{row.color}} </mat-cell>
+			<mat-header-cell *cdkHeaderCellDef mat-sort-header> Ações </mat-header-cell>
+			<mat-cell class="actions" *cdkCellDef="let row" [style.color]="row.color">
+				<button mat-button color="primary" (click)="edit(element)">
+          <mat-icon>edit</mat-icon>
+        </button>
+				<button mat-button color="accent" (click)="del(element)">
+          <mat-icon>delete</mat-icon>
+        </button>
+			</mat-cell>
 		</ng-container>
 
 		<mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
